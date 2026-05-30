@@ -1,219 +1,31 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Solo Leveling: Python Quest Panel</title>
     <style>
-        body {
-            background-color: #0d0e12;
-            color: #e2e8f0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 20px;
-        }
-
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        header {
-            border-bottom: 2px solid #3b82f6;
-            padding-bottom: 20px;
-            margin-bottom: 30px;
-            text-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
-        }
-
-        h1 {
-            color: #3b82f6;
-            margin: 0;
-            font-size: 28px;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-        }
-
-        .status-panel {
-            background: linear-gradient(135deg, #1e1b4b 0%, #0f172a 100%);
-            border: 1px solid #4f46e5;
-            border-radius: 8px;
-            padding: 20px;
-            margin-bottom: 30px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
-        }
-
-        .status-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 15px;
-            margin-top: 15px;
-        }
-
-        .status-item {
-            background: rgba(255, 255, 255, 0.05);
-            padding: 10px;
-            border-radius: 4px;
-            border-left: 3px solid #a855f7;
-        }
-
-        .status-item strong {
-            color: #a855f7;
-            display: block;
-            font-size: 12px;
-            text-transform: uppercase;
-        }
-
-        .quest-card {
-            background-color: #11131a;
-            border: 1px solid #334155;
-            border-radius: 8px;
-            padding: 25px;
-            margin-bottom: 25px;
-        }
-
-        .quest-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 1px solid #334155;
-            padding-bottom: 10px;
-            margin-bottom: 15px;
-        }
-
-        .quest-title {
-            color: #3b82f6;
-            margin: 0;
-            font-size: 20px;
-            font-weight: 600;
-        }
-
-        .quest-xp {
-            background-color: #1e293b;
-            color: #10b981;
-            padding: 4px 10px;
-            border-radius: 20px;
-            font-size: 12px;
-            font-weight: bold;
-            border: 1px solid #10b981;
-        }
-
-        .section-title {
-            color: #94a3b8;
-            font-size: 14px;
-            text-transform: uppercase;
-            margin-top: 15px;
-            margin-bottom: 5px;
-            font-weight: bold;
-        }
-
-        .challenge-box {
-            margin-bottom: 30px; 
-            border-left: 3px solid #3b82f6; 
-            padding-left: 15px;
-            background: rgba(255, 255, 255, 0.01);
-            padding-top: 10px;
-            padding-bottom: 10px;
-            border-radius: 0 8px 8px 0;
-        }
-
-        pre {
-            background-color: #050507;
-            border: 1px solid #1e293b;
-            border-radius: 6px;
-            padding: 12px;
-            margin: 5px 0 0 0;
-        }
-
-        code {
-            font-family: 'Consolas', 'Courier New', Courier, monospace;
-            color: #a855f7;
-            font-size: 14px;
-        }
+        body { background-color: #0d0d0d; color: #00d4ff; font-family: 'Courier New', monospace; padding: 20px; }
+        .window { border: 2px solid #00d4ff; padding: 20px; border-radius: 10px; background: rgba(0, 0, 0, 0.8); }
+        h1 { text-align: center; text-transform: uppercase; letter-spacing: 5px; border-bottom: 1px solid #00d4ff; }
+        .boss-list { list-style: none; padding: 0; }
+        .boss-item { margin: 10px 0; padding: 10px; background: #1a1a1a; border-left: 5px solid #00d4ff; }
+        .status { color: #fff; font-weight: bold; }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        
-        <header>
-            <h1>✦ PYTHON CODE LEVELING SYSTEM ✦</h1>
-            <p style="color: #64748b; margin: 5px 0 0 0;">Desafios Diários de Programação e Automação</p>
-        </header>
-
-        <div class="status-panel">
-            <h2 style="margin: 0; font-size: 18px; color: #e2e8f0;">[ STATUS DO JOGADOR ]</h2>
-            <div class="status-grid">
-                <div class="status-item">
-                    <strong>Jogador</strong>
-                    Monarca do Código
-                </div>
-                <div class="status-item">
-                    <strong>Nível Atual</strong>
-                    Nível 01
-                </div>
-                <div class="status-item">
-                    <strong>XP Total</strong>
-                    0 / 100
-                </div>
-                <div class="status-item">
-                    <strong>Classe</strong>
-                    Cyber-Sec Apprentice
-                </div>
-            </div>
+<div class="window">
+    <h1>[SISTEMA DE EVOLUÇÃO]</h1>
+    <p>Usuário: João | Nível: Iniciante | XP: 350/1000</p>
+    
+    <div class="boss-list">
+        <div class="boss-item">Boss 03: Variáveis <span class="status">[DERROTADO]</span></div>
+        <div class="boss-item">Boss 04: Tipagem <span class="status">[DERROTADO]</span></div>
+        <div class="boss-item">Boss 05: Git <span class="status">[DERROTADO]</span></div>
+        <div class="boss-item">Boss 06: Exponenciação <span class="status">[DERROTADO]</span></div>
+        <div class="boss-item">Boss 07: Média <span class="status">[DERROTADO]</span></div>
+        <div class="boss-item">Boss 08: Conversor <span class="status">[DERROTADO]</span></div>
+        <div class="boss-item">Boss 09: Tabuada <span class="status">[PENDENTE]</span></div>
         </div>
-
-        <h2 style="color: #e2e8f0; font-size: 22px; margin-bottom: 20px;">⚔️ Missões Disponíveis (Daily Quests)</h2>
-
-        <div class="quest-card">
-            <div class="quest-header">
-                <h3 class="quest-title">CONJUNTO DIA 1: Desafios de Lógica Pura</h3>
-                <span class="quest-xp">+50 XP TOTAL</span>
-            </div>
-            
-            <p style="color: #94a3b8; margin-top: 0; margin-bottom: 25px;">Converta os algoritmos em código Python real dentro do seu arquivo <code>projeto.py</code> de cabeça.</p>
-
-            <div class="challenge-box">
-                <h4 style="color: #38bdf8; margin: 0;">⚡ Desafio 1.1: O Disparador de Alertas</h4>
-                <p style="margin: 5px 0 10px 0; font-size: 14px;"><b>Missão:</b> Faça o terminal mostrar uma mensagem estática de aviso, informando que o sistema de segurança foi ligado.</p>
-                <div class="section-title">A Lógica na sua cabeça:</div>
-                <p style="margin: 5px 0; font-size: 14px; color: #94a3b8;">1. Chamar a função de mostrar texto na tela.<br>2. Passar a mensagem: "[SISTEMA INICIALIZADO]"</p>
-                <pre><code>Ferramenta necessária: print()</code></pre>
-            </div>
-
-            <div class="challenge-box">
-                <h4 style="color: #38bdf8; margin: 0;">⚡ Desafio 1.2: Captura de IP do Alvo</h4>
-                <p style="margin: 5px 0 10px 0; font-size: 14px;"><b>Missão:</b> Faça o programa perguntar um endereço IP para quem estiver usando, guarde essa resposta e depois mostre uma frase confirmando qual IP foi capturado.</p>
-                <div class="section-title">A Lógica na sua cabeça:</div>
-                <p style="margin: 5px 0; font-size: 14px; color: #94a3b8;">1. Criar uma variável chamada 'alvo'.<br>2. Fazer o programa perguntar o IP e salvar dentro de 'alvo'.<br>3. Dar um print juntando o texto fixo com o valor da variável.</p>
-                <pre><code>Ferramentas necessárias: variáveis e input()</code></pre>
-            </div>
-
-            <div class="challenge-box">
-                <h4 style="color: #38bdf8; margin: 0;">⚡ Desafio 1.3: Bloqueador de Palavras Perigosas</h4>
-                <p style="margin: 5px 0 10px 0; font-size: 14px;"><b>Missão:</b> Peça para o usuário digitar um comando. SE o comando for exatamente a palavra "virus", dispare um alerta de perigo vermelho na tela.</p>
-                <div class="section-title">A Lógica na sua cabeça:</div>
-                <p style="margin: 5px 0; font-size: 14px; color: #94a3b8;">1. Receber o comando via input.<br>2. Testar a condição: SE o comando for igual a "virus", empurre a próxima linha para a direita e mostre o alerta.</p>
-                <pre><code>Ferramentas necessárias: input(), if e operador de igualdade (==)</code></pre>
-            </div>
-
-            <div class="challenge-box">
-                <h4 style="color: #38bdf8; margin: 0;">⚡ Desafio 1.4: O Inspetor de Portas de Rede</h4>
-                <p style="margin: 5px 0 10px 0; font-size: 14px;"><b>Missão:</b> Crie um validador de portas. Pergunte o número de uma porta. SE for a porta 80, diga que é tráfego de internet comum. CASO CONTRÁRIO (qualquer outra porta), exiba que a porta é suspeita.</p>
-                <div class="section-title">A Lógica na sua cabeça:</div>
-                <p style="margin: 5px 0; font-size: 14px; color: #94a3b8;">1. Receber o número transformando em número inteiro.<br>2. SE for igual a 80 -> Mostra "Porta HTTP".<br>3. CASO CONTRÁRIO (na mesma linha do if original) -> Mostra "Suspeita".</p>
-                <pre><code>Ferramentas necessárias: int(input()), if e else</code></pre>
-            </div>
-
-            <div class="challenge-box" style="border-left-color: #a855f7; margin-bottom: 5px;">
-                <h4 style="color: #a855f7; margin: 0;">👑 Desafio 1.5: Triagem de Sistema de Arquivos (Malware Scan)</h4>
-                <p style="margin: 5px 0 10px 0; font-size: 14px;"><b>Missão:</b> Peça o nome de um arquivo com o formato. SE terminar com ".exe", printe um aviso de perigo. SE terminar com ".py", printe que é um script de automação. CASO CONTRÁRIO, trate como arquivo comum.</p>
-                <div class="section-title">A Lógica na sua cabeça:</div>
-                <p style="margin: 5px 0; font-size: 14px; color: #94a3b8;">1. Capturar o nome do arquivo.<br>2. SE terminar com ".exe" -> Alerta.<br>3. SENÃO SE terminar com ".py" -> Script Seguro.<br>4. SENÃO -> Arquivo comum.</p>
-                <pre><code>Ferramentas necessárias: if, elif, else e a função .endswith()</code></pre>
-            </div>
-        </div>
-
-    </div>
+</div>
 
 </body>
 </html>
