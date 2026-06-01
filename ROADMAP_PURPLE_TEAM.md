@@ -6,10 +6,10 @@
 
 ## ⚡ MISSÃO DE ATIVAÇÃO — HOJE (28/05/2026)
 
-- [ ] Abrir o terminal e criar olamundo.py
-- [ ] Criar LOG_DE_GUERRA.md com entrada: 28/05/2026 — Iniciado Protocolo de Elite
-- [ ] Criar repositório Protocolo-Operador no GitHub e fazer primeiro commit
-- [ ] Assistir Aula 1 da SecDay Academy no YouTube
+- [x] Abrir o terminal e criar olamundo.py
+- [x] Criar LOG_DE_GUERRA.md com entrada: 28/05/2026 — Iniciado Protocolo de Elite
+- [x] Criar repositório Protocolo-Operador no GitHub e fazer primeiro commit
+- [x] Assistir Aula 1 da SecDay Academy no YouTube
 
 ---
 
