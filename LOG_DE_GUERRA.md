@@ -52,3 +52,6 @@
 ### 6. Próximo Passo
 - Resolver os desafios práticos do 16 ao 21 da Aula 8
 - Commitar cada exercício imediatamente após criar
+
+### 3 de junho proximos passos
+- **2026-06-03 — Meta definida: Home Lab (DC + Win10 + Kali) operacional até 05/06/2026**
