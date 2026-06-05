@@ -55,3 +55,36 @@
 
 ### 3 de junho proximos passos
 - **2026-06-03 — Meta definida: Home Lab (DC + Win10 + Kali) operacional até 05/06/2026**
+
+### 4 de junho 
+1. Objetivo Operacional
+Estabelecer ambiente de desenvolvimento isolado e profissional no Zorin OS (base Debian) para início das atividades de Python (Fase 1 - Bloco A).
+
+2. Configurações Realizadas
+Ambiente Isolado (venv): Criado com sucesso para evitar poluição do SO principal.
+
+Integração VS Code:
+
+Terminal integrado configurado e ativado (source venv/bin/activate).
+
+Interpretador Python do VS Code apontado para o executável dentro da venv.
+
+Dependências: Biblioteca Pillow instalada via pip para manipulação de imagem.
+
+Comando de verificação: python -c "from PIL import Image; print('Pillow instalado com sucesso!')"
+
+3. Conceitos Dominados
+Virtual Environments: Isolamento de dependências como pré-requisito de engenharia.
+
+Gerenciamento de Pacotes: Uso do pip para expansão de capacidades do Python.
+
+ASCII Art (Lógica Hacker): Compreensão do mapeamento de densidade de pixels em caracteres (conversão de matrizes de dados em representação visual).
+
+Sistemas de Permissão: Entendimento básico da lógica de os.access (o primeiro passo para identificar brechas em servidores).
+
+4. Pendências / Próximos Passos (Julho)
+[ ] Iniciar Bloco A: Scripts de automação de sistema (Bash + Python).
+
+[ ] Configurar Lab de VMs (VirtualBox: Kali + Windows 10 + Windows Server).
+
+[ ] Criar script de scanner de permissões funcional.
