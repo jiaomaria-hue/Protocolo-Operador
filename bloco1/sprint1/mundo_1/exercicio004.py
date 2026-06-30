@@ -1,0 +1,8 @@
+a = input('Digite algo: ')
+print('-' * 20)
+print(f'O tipo primitivo desse valor é {a}')
+print(f'Só tem espaços? {a.isspace()}')
+print(f'É um número? {a.isnumeric()}')
+print(f'É alfabético? {a.isalpha()}')
+print(f'Está em maiúsculas? {a.isupper()}')
+print('-' * 20)
