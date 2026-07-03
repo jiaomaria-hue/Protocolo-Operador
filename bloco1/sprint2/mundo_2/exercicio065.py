@@ -7,7 +7,7 @@ while True:
     if n == 999:
         break
 
-soma += n
-contador += 1
+    soma += n
+    contador += 1
 
 print(f'Vocẽ digitou {contador} numeros e a soma entre eles é {soma}')
