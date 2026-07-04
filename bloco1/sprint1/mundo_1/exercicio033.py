@@ -3,7 +3,6 @@ n1 = int(input('Digite o 1º número: '))
 n2 = int(input('Digite o 2º número: '))
 n3 = int(input('Digite o 3º número: '))
 
-# --- Lógica para o MAIOR ---
 maior = n1
 
 if n2 > maior:
@@ -12,7 +11,6 @@ if n2 > maior:
 if n3 > maior:
     maior = n3
 
-# --- Lógica para o MENOR ---
 menor = n1
 
 if n2 < menor:

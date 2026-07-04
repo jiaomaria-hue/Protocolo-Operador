@@ -1,3 +1,7 @@
+
+# ORIGEM: código de [Sawyerk], Blue/Red Team júnior
+# USO: referência de estudo, NÃO é trabalho próprio
+# Reescrever do zero quando chegar em Sprint de módulos externos/API
 import argparse
 import ipaddress
 import json
