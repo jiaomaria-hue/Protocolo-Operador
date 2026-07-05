@@ -7,7 +7,7 @@ while True:
     print('CADASTRANDO UMA PESSOA')
     print('-' * 20)
     
-    # --- BLINDAGEM DA IDADE ---
+    
     while True:
         try:
             idade = int(input('Idade: '))
@@ -25,7 +25,7 @@ while True:
         
     print('-' * 20)
     
-    # --- ANÁLISE DOS DADOS ---
+    
     if idade > 18:
         tot_18 += 1
         
@@ -35,7 +35,7 @@ while True:
     if sex == 'F' and idade < 20:
         tot_mulheres_20 += 1
     
-    # --- BLINDAGEM DA PARADA ---
+    
     cont = ' '
     while cont not in 'SN':
         cont = str(input('Quer continuar? [S/N] ')).strip().upper()[0]
