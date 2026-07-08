@@ -1,5 +1,4 @@
 import socket
-
 alvo = input('Digite o alvo: ')
 print(f'Escaneando {alvo}...')
 print('-' * 30)

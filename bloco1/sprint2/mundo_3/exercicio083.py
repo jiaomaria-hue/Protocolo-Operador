@@ -13,7 +13,6 @@ while True:
         cont = str(input('Quer continuar? [S/N] ')).strip().upper()[0]
     if cont == 'N':
         break
-print(lista)
-print(lista_par)
-print(lista_impar)
-    
+print(f'a lista normal é {lista}')
+print(f'a lista par é {lista_par}')
+print(f'a lista impar {lista_impar}')

@@ -7,3 +7,5 @@ PENDÊNCIAS REVISÃO BLOCO 1→2:
 - Guanabara - Redes → Sprint 3 (complemento)
 - CPTA v2 (CyberWarFare Labs) → adicionar na tabela de - certificações
   como opção entre BTL1 e OSCP
+echo "- Prowler ou ScoutSuite → adicionar ao Bloco 2 Sprint 12 (Cloud Security)"
+echo "- Trivy → adicionar ao Bloco 2 Sprint 13 (Docker/DevSecOps)"
