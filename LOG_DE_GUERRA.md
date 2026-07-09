@@ -218,3 +218,24 @@ Python — causa conflito no import.
 
 **Tempo perdido:** 10 min (KeyboardInterrupt + arquivo socket.py)
 **Nunca mais:** ✅ — arquivo socket.py
+
+## [004] — 08/07/2026 — Desafios mundo 3
+
+**Sprint:** 2 · **Área:** Python, Desafios Mundo 3
+
+**Contexto:**
+Aula sobre listas compostas, desafios e etc.
+
+**O que aprendi:**
+sobre listas compostas
+
+**O que ainda não entendo:**
+Eu ainda nao entendi muito como copia uma lista (ja entendi)
+**Resultado:**
+os Desafios deram certos.
+
+**Lição permanente:**
+Nunca copiar codigo da internet
+
+**Tempo perdido:** 20 minutos
+**Nunca mais:** X — Desafios .
