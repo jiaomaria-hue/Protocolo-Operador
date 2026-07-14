@@ -27,3 +27,4 @@ def resumo(valor, taxa_aum=10, taxa_red=5):
     print(f'Metade do preço: \t{metade(valor, True)}')
     print(f'{taxa_aum}% de aumento: \t{aumentar(valor, taxa_aum, True)}')
     print(f'{taxa_red}% de redução: \t{diminuir(valor, taxa_red, True)}')
+    print('-' * 30)
