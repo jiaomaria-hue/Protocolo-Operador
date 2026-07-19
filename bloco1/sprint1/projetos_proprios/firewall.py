@@ -16,5 +16,3 @@ class Firewall:
         else:
             print('\033[31m❌ DROP — Porta desconhecida\033[0m')
         print('-' * 40)
-f = Firewall(80, 'TCP')
-f.analisar()
