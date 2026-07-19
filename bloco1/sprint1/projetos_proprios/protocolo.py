@@ -37,19 +37,22 @@ while True:
             print('\033[31m❌ Erro: Digite um número válido para a porta.\033[0m')
 
     elif opcao == '3':
-        alvo = input('\033[36mDigite o alvo: \033[0m')
-        print(f'\n\033[33m🔍 Escaneando {alvo}...\033[0m')
-        print('-' * 40)
-        
-        abertas = 0
-        for porta in range(1, 1025):
-            s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-            s.settimeout(0.5)
-            resultado = s.connect_ex((alvo, porta))
-            if resultado == 0:
-                print(f'\033[32m✅ Porta {porta} aberta\033[0m')
-                abertas += 1
-            s.close()
+        try:
+            alvo = input('\033[36mDigite o alvo: \033[0m')
+            print(f'\n\033[33m🔍 Escaneando {alvo}...\033[0m')
+            print('-' * 40)
+            
+            abertas = 0
+            for porta in range(1, 1025):
+                s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+                s.settimeout(0.5)
+                resultado = s.connect_ex((alvo, porta))
+                if resultado == 0:
+                    print(f'\033[32m✅ Porta {porta} aberta\033[0m')
+                    abertas += 1
+                s.close()
+        except:
+            print('Erro! Porfavor digite um Alvo correto.')
         
         print('-' * 40)
         print(f'\033[1mScan completo. {abertas} porta(s) aberta(s) encontrada(s).\033[0m')

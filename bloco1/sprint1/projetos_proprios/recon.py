@@ -8,5 +8,3 @@ class Recon:
             print(f'✅ IP encontrado: {ip}')
         except:
             print('❌ Não foi possível resolver o domínio')
-r = Recon('google.com')
-r.resolver_ip()
