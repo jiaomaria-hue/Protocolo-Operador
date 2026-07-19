@@ -1,3 +1,4 @@
+from recon import Recon
 import socket
 from time import sleep
 while True:
@@ -22,14 +23,8 @@ while True:
 
     if opcao == '1':
         alvo = input('\033[36mDigite o dominio ou Ip do alvo: \033[0m')
-        print(f'\n\033[33m🔍 Iniciando reconhecimento em: {alvo}\033[0m')
-        print('-' * 40)
-        try:
-            ip = socket.gethostbyname(alvo)
-            print(f'\033[32m✅ IP encontrado: {ip}\033[0m')
-        except:
-            print('\033[31m❌ Não foi possível resolver o domínio\033[0m')
-        print('-' * 40)
+        r = Recon(alvo)
+        r.resolver_ip()
 
     elif opcao == '2':
         try:
