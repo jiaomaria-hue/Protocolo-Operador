@@ -7,5 +7,10 @@ PENDÊNCIAS REVISÃO BLOCO 1→2:
 - Guanabara - Redes → Sprint 3 (complemento)
 - CPTA v2 (CyberWarFare Labs) → adicionar na tabela de - certificações
   como opção entre BTL1 e OSCP
-echo "- Prowler ou ScoutSuite → adicionar ao Bloco 2 Sprint 12 (Cloud Security)"
-echo "- Trivy → adicionar ao Bloco 2 Sprint 13 (Docker/DevSecOps)"
+- Prowler ou ScoutSuite → adicionar ao Bloco 2 Sprint 12 (Cloud Security)
+- Trivy → adicionar ao Bloco 2 Sprint 13 (Docker/DevSecOps)
+- Shodan, theHarvester, crt.sh → inserir no Sprint 5 Bloco 1
+- Resolver logística AWS/Azure + certificações com responsável (URGENTE)
+- Prioridade SIEM: Splunk e Elastic > Sentinel se tempo apertar
+- Sigma: inserir 2-3 dias de sintaxe YAML antes das 3 regras no Sprint 5 Bloco 2
+- RE Sprint 4 Bloco 3: sprint que mais vai estourar prazo — documentar decisão no final
