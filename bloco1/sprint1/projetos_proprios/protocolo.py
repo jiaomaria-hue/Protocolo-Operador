@@ -1,4 +1,5 @@
 from recon import Recon
+from firewall import Firewall
 import socket
 from time import sleep
 while True:
@@ -30,21 +31,10 @@ while True:
         try:
             porta = int(input('\033[36mDigite a porta: \033[0m'))
             protocolo = input('\033[36mDigite o protocolo (TCP/UDP): \033[0m').upper()
-            
-            print(f'\n\033[33m🔍 Analisando porta {porta} via {protocolo}...\033[0m')
-            print('-' * 40)
-            
-            if porta == 80 and protocolo == 'TCP':
-                print('\033[32m✅ ALLOW — HTTP permitido\033[0m')
-            elif porta == 443 and protocolo == 'TCP':
-                print('\033[32m✅ ALLOW — HTTPS permitido\033[0m')
-            elif porta == 22 and protocolo == 'TCP':
-                print('\033[31m🚫 BLOCK — SSH bloqueado\033[0m')
-            else:
-                print('\033[31m❌ DROP — Porta desconhecida\033[0m')
-            print('-' * 40)
+            f = Firewall(porta, protocolo)
+            f.analisar()
         except ValueError:
-            print('\033[31m❌ Erro: Por favor, digite um número válido para a porta.\033[0m')
+            print('\033[31m❌ Erro: Digite um número válido para a porta.\033[0m')
 
     elif opcao == '3':
         alvo = input('\033[36mDigite o alvo: \033[0m')
