@@ -14,3 +14,4 @@ PENDÊNCIAS REVISÃO BLOCO 1→2:
 - Prioridade SIEM: Splunk e Elastic > Sentinel se tempo apertar
 - Sigma: inserir 2-3 dias de sintaxe YAML antes das 3 regras no Sprint 5 Bloco 2
 - RE Sprint 4 Bloco 3: sprint que mais vai estourar prazo — documentar decisão no final
+- Curso em Vídeo - Segurança da Informação (Módulos 00-04) → avaliar encaixe no Sprint 4 ou 5 do Bloco 1
