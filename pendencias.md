@@ -1,17 +1,38 @@
-PENDÊNCIAS REVISÃO BLOCO 1→2:
-- Bóson Treinamentos (Linux) → Sprint 3
-- Mente Binária (RE) → Bloco 3 Sprint 4
-- Messias Eric - Python para Pentesters → Sprint 2
-- LiveOverflow (Binary Exploitation) → Bloco 3 Sprint 4
-- Solyd - Intro Hacking e Pentest → Sprint 5 Bloco 1
-- Guanabara - Redes → Sprint 3 (complemento)
-- CPTA v2 (CyberWarFare Labs) → adicionar na tabela de - certificações
-  como opção entre BTL1 e OSCP
-- Prowler ou ScoutSuite → adicionar ao Bloco 2 Sprint 12 (Cloud Security)
-- Trivy → adicionar ao Bloco 2 Sprint 13 (Docker/DevSecOps)
-- Shodan, theHarvester, crt.sh → inserir no Sprint 5 Bloco 1
-- Resolver logística AWS/Azure + certificações com responsável (URGENTE)
-- Prioridade SIEM: Splunk e Elastic > Sentinel se tempo apertar
-- Sigma: inserir 2-3 dias de sintaxe YAML antes das 3 regras no Sprint 5 Bloco 2
-- RE Sprint 4 Bloco 3: sprint que mais vai estourar prazo — documentar decisão no final
-- Curso em Vídeo - Segurança da Informação (Módulos 00-04) → avaliar encaixe no Sprint 4 ou 5 do Bloco 1
+PENDÊNCIAS REVISÃO BLOCO 1→2 (consolidado):
+
+Bloco 1
+- Messias Eric – Python para Pentesters → Sprint 2
+- Bóson Linux + Curso em Vídeo Redes → Sprint 3
+- Solyd – Introdução ao Pentest → Sprint 5
+- Shodan, theHarvester, crt.sh → Sprint 5
+
+Bloco 2
+- Criptografia aplicada (TLS, PKI, certificados, hashes, HMAC)
+- Sintaxe YAML antes do primeiro laboratório de Sigma
+- Detection as Code
+- Métricas de cobertura MITRE ATT&CK
+- Microsoft Entra ID
+- Zero Trust
+- Threat Intelligence conceitual (STIX, TAXII, MISP, OpenCTI — sem hospedar infraestrutura)
+- Prowler ou ScoutSuite → Sprint 12 (Cloud Security)
+- Trivy → Sprint 13 (Docker/DevSecOps)
+- Prioridade SIEM: Splunk e Elastic > Sentinel se o tempo apertar
+
+Bloco 3
+- Windows Internals conceitual (processos, threads, tokens, memória virtual, ETW, AMSI — sem loader/injection/shellcode)
+- Mente Binária + LiveOverflow como apoio pra Reverse Engineering
+- Documentar Sprint 4 como o de maior risco de atraso; revisão prevista ao final dele
+
+Certificações
+- CPTA v2 (CyberWarFare Labs) → opção entre BTL1 e OSCP
+
+Apêndices (novos, fora do cronograma)
+- Apêndice de Ferramentas Essenciais (OSINT, Red Team, Blue Team, Cloud, Containers)
+- Apêndice de Recursos Complementares (canais, cursos, docs oficiais)
+
+Administrativo — URGENTE
+- Resolver logística de conta AWS/Azure + inscrição de certificações com responsável
+- Escolher 1 cloud principal (AWS ou Azure) e tratar a outra como complementar
+
+Fora do escopo (adiado pro Ano 2–3, não entra no v9)
+- Exploit Development, Shellcode, Loaders, Win32 API avançada, Desenvolvimento de malware, Pesquisa de vulnerabilidades, C/C++ ofensivo avançado

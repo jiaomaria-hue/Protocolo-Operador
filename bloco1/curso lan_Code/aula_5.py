@@ -1,0 +1,21 @@
+r=input('quer começar? (sim ou nao:)').lower()
+
+if r=='sim':
+ print('LL             II  LL          YY      YY  TTTTTTTTTTTTTT  HH       HH')
+ print('LL             II  LL          YY      YY  TTTTTTTTTTTTTT  HH       HH')
+ print('LL                 LL          YY      YY        TT        HH       HH')
+ print('LL             II  LL           YY    YY         TT        HH       HH')
+ print('LL             II  LL            YY  YY          TT        HH       HH')
+ print('LL             II  LL              YY            TT        HHHHHHHHHHH')
+ print('LL             II  LL              YY            TT        HHHHHHHHHHH')
+ print('LL             II  LL              YY            TT        HH       HH')
+ print('LL             II  LL              YY            TT        HH       HH')
+ print('LL             II  LL              YY            TT        HH       HH')
+ print('LLLLLLLLLLLLL  II  LLLLLLLLLLLLLL  YY            TT        HH       HH')
+ print('LLLLLLLLLLLLL  II  LLLLLLLLLLLLLL  YY            TT        HH       HH')
+ print('')
+ print('bom dia meu nome e lilyth ou arthur sou estudande te programação python pretendo')
+ print('começar na cybercigurança essa e minha forma de apresentação ent e isso')
+ print('todos os testes e projetos estao nessa pasta.esse e o meu protifolio:lilyth..')
+else :
+ print('adeus') 

@@ -1,6 +1,3 @@
-# ORIGEM: código de [Sawyerk], Blue/Red Team júnior
-# USO: referência de estudo, NÃO é trabalho próprio
-# Reescrever do zero quando chegar em Sprint de módulos externos/API
 import argparse
 import ipaddress
 import json
@@ -12,9 +9,9 @@ from typing import Any, Dict, Optional
 
 import requests
 
+
 RIPE_URL = "https://stat.ripe.net/data/prefix-overview/data.json"
-# CORREÇÃO: Alterado para HTTPS para evitar rejeição da API
-IPAPI_URL = "https://ip-api.com/json/{ip}"
+IPAPI_URL = "http://ip-api.com/json/{ip}"
 REQUEST_TIMEOUT = 10
 
 
@@ -33,13 +30,12 @@ def rodar_whois(ip: str) -> Dict[str, Optional[str]]:
             "raw": None,
             "bloco": None,
             "titular": None,
-            "erro": "Comando 'whois' não instalado no sistema operando. Execute: sudo apt install whois"
+            "erro": "Comando whois não encontrado no sistema."
         }
 
     try:
-        # Consulta genérica para o WHOIS descobrir o servidor correto automaticamente
         resultado = subprocess.run(
-            [whois_bin, ip],
+            [whois_bin, "-h", "whois.lacnic.net", ip],
             capture_output=True,
             text=True,
             timeout=15,
@@ -150,14 +146,9 @@ def consultar_ripe(ip: str) -> Dict[str, Any]:
 
 def consultar_geo(ip: str) -> Dict[str, Any]:
     try:
-        # CORREÇÃO: Headers adicionados para simular navegador real e evitar bloqueios automáticos
-        headers = {
-            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
-        }
         resp = requests.get(
             IPAPI_URL.format(ip=ip),
             params={"fields": "status,message,country,regionName,city,zip,lat,lon,isp,org,query"},
-            headers=headers,
             timeout=REQUEST_TIMEOUT
         )
         resp.raise_for_status()
@@ -165,8 +156,14 @@ def consultar_geo(ip: str) -> Dict[str, Any]:
 
         if data.get("status") != "success":
             return {
-                "pais": None, "regiao": None, "cidade": None, "cep": None,
-                "lat": None, "lon": None, "isp": None, "org": None,
+                "pais": None,
+                "regiao": None,
+                "cidade": None,
+                "cep": None,
+                "lat": None,
+                "lon": None,
+                "isp": None,
+                "org": None,
                 "erro": f"GeoIP falhou: {data.get('message', 'erro desconhecido')}"
             }
 
@@ -184,14 +181,26 @@ def consultar_geo(ip: str) -> Dict[str, Any]:
 
     except requests.RequestException as e:
         return {
-            "pais": None, "regiao": None, "cidade": None, "cep": None,
-            "lat": None, "lon": None, "isp": None, "org": None,
+            "pais": None,
+            "regiao": None,
+            "cidade": None,
+            "cep": None,
+            "lat": None,
+            "lon": None,
+            "isp": None,
+            "org": None,
             "erro": f"Erro na consulta GeoIP: {e}"
         }
     except (ValueError, TypeError) as e:
         return {
-            "pais": None, "regiao": None, "cidade": None, "cep": None,
-            "lat": None, "lon": None, "isp": None, "org": None,
+            "pais": None,
+            "regiao": None,
+            "cidade": None,
+            "cep": None,
+            "lat": None,
+            "lon": None,
+            "isp": None,
+            "org": None,
             "erro": f"Resposta inesperada do GeoIP: {e}"
         }
 
@@ -207,7 +216,7 @@ def imprimir_relatorio(ip: str, whois_data: Dict[str, Any], ripe_data: Dict[str,
 
     print("\n=== BGP / ASN ===")
     print("Prefixo:    ", ripe_data.get("prefix") or "Não encontrado")
-    print("ASN:        ", f"AS{ripe_data.get('asn')}" if ripe_data.get('asn') else "Não encontrado")
+    print("ASN:        ", ripe_data.get("asn") or "Não encontrado")
     print("Holder ASN: ", ripe_data.get("asn_holder") or "Não encontrado")
     if ripe_data.get("erro"):
         print("Erro RIPE:  ", ripe_data["erro"])
@@ -219,7 +228,7 @@ def imprimir_relatorio(ip: str, whois_data: Dict[str, Any], ripe_data: Dict[str,
     print("CEP:        ", geo_data.get("cep") or "Não encontrado")
     print("ISP:        ", geo_data.get("isp") or "Não encontrado")
     print("Org:        ", geo_data.get("org") or "Não encontrado")
-    print("Lat/Lon:    ", f"{geo_data.get('lat')} / {geo_data.get('lon')}" if geo_data.get('lat') else "Não encontrado")
+    print("Lat/Lon:    ", f"{geo_data.get('lat')} / {geo_data.get('lon')}")
     if geo_data.get("erro"):
         print("Erro GEOIP: ", geo_data["erro"])
 
