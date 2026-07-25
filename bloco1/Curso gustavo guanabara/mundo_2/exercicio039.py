@@ -1,15 +1,15 @@
 try:
-    # Tudo o que está aqui dentro deve ter um recuo de 4 espaços
     nasc = int(input('Qual o seu ano de nascimento? '))
     idade = 2026 - nasc
     serv_militar = 18
-    # ... resto do seu código com recuo ...
 except ValueError:
-    # Este print também precisa de recuo de 4 espaços
     print('Erro: voce nao digitou um numero.')
-if serv_militar > idade:
-    print('voce esta muito velho')
-elif idade > serv_militar:
-    print('voce ainda vai se alistar')
-if serv_militar == idade:
-    print('Esta na hora de se alistar.')
+else:
+    if idade > serv_militar:
+        anos_passados = idade - serv_militar
+        print(f'Voce já passou da idade de se alistar. Voce tem {idade} anos e já se passaram {anos_passados} anos do prazo.')
+    elif idade < serv_militar:
+        anos_faltantes = serv_militar - idade
+        print(f'Voce ainda vai se alistar. Voce tem {idade} anos e faltam {anos_faltantes} anos para o alistamento.')
+    else:
+        print('Está na hora de se alistar. O mais rápido possível!')

@@ -1,23 +1,23 @@
-    # declaraçao de classe
 class Gafanhoto:
+    """
+    Essa classe cria um gafanhoto, que é uma pessoa que tem nome e idade.
+
+    Para criar uma nova pessoa, use:
+    variavel = Gafanhoto(nome, idade)
+    """
     def __init__(self, n='vazio', i=0):
-        """
-    Essa classe cria um gafanhoto, que é uma pessoa que tem nome e idade
-    
-    Para criar uma nova pessoa, ue:
-    variavel = gafanhoto(nome, idade)
-        """
-        #metodo contrutor
-        # atributos de instacians
+        # Atributos de instância
         self.nome = n
         self.idade = i
-    #metodos de instancias
+
+    # Métodos de instância
     def aniversario(self):
         self.idade = self.idade + 1
     
     def mensagem(self):
         return f'{self.nome} é Gafanhoto e tem {self.idade} anos de idade'
-    #declaraço de objetos
+
+# Declaração de objetos
 g1 = Gafanhoto("Maria", 17)
 g1.aniversario()
 print(g1.mensagem())
