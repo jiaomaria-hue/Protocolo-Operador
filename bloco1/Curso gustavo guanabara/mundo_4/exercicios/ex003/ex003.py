@@ -32,9 +32,6 @@ Cria uma conta bancaria e deixa possivel fazer saques e depositos
         print(f'o seu saldo atual é {self._saldo}')
 
 conta = ContaBancaria(112, 'gustavo', 1500)
-print('-' * 30)
-conta.depositar(0)
-
-conta.sacar(2000)
-
-conta.ver_saldo()
+conta.depositar(500)
+conta.sacar(300)
+print(conta)
