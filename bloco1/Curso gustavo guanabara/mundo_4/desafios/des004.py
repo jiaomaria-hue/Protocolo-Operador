@@ -39,7 +39,7 @@ class Livro:
             print(f'[white]Pág{i}[/] [magenta]▶[/]', end=' ')
             time.sleep(0.5) 
 
-# --- Execução ---
+
 l1 = Livro(titulo="10 coisas que aprendi", paginas=20)
 print(l1)
 

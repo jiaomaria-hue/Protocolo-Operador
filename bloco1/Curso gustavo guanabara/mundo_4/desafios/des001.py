@@ -5,7 +5,7 @@ class Funcionario:
         self.setor = setor
         self.cargo = cargo
     def aprensentacao(self):
-        return f':waving_hand: Olá, sou [blue]{self.nome}[/] e sou do cargo de [red]{self.cargo}[/] na empresa do Curso em video, e sou do setor de [green]{self.setor}[/]'
+        return f':waving_hand: Olá, sou [blue]{self.nome}[/] e sou do cargo de [red]{self.cargo}[/] na empresa da FBI, e sou do setor de [green]{self.setor}[/]'
 c1 = Funcionario('joao', 'Diretoria', 'Cybersecurity')
 print(c1.aprensentacao())
 
