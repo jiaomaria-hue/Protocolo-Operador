@@ -1,16 +1,27 @@
 from rich import print
 
 class Caneta:
-    CORES = {
-        "azul": "blue",
-        "vermelho": "red",
-        "verde": "green"
-    }
 
-    def __init__(self, modelo, cor):
-        self.modelo = modelo
-        self.cor = cor.lower()
+    def __init__(self, cor='azul'):
+        escolha = ''
+        match cor.lower().strip():
+            case 'azul':
+                escolha = '[blue]'
+            case 'vermelho' | 'vermelha':
+                escolha = '[red]'
+            case 'laranja':
+                escolha = '[orange]'
+            case 'amarelo':
+                escolha = '[yellow]'
+            case 'verde':
+                escolha = '[green]'
+            case _:
+                escolha = '[white]'
+        self.cor = escolha
         self.tampada = True
+
+    def quebrar_linha(self, qtd = 1):
+        print('\n' * qtd, end='')
 
     def tampar(self):
         self.tampada = True
@@ -22,12 +33,21 @@ class Caneta:
 
     def escrever(self, texto):
         if self.tampada:
-            return f"Erro: A caneta {self.modelo} está tampada! Não é possível escrever."
+            print(f':prohibited: A {self.cor}caneta[/] esta tampada')
         else:
-            cor_rich = self.CORES.get(self.cor, "white")
-            
-            print(f"[{cor_rich}]{texto}[/{cor_rich}]")
-
-c2 = Caneta(modelo="Faber-Castell", cor="vermelho")
+            print(f'{self.cor}{texto}[/]', end='')
+c2 = Caneta( cor="vermelho")
+c3 = Caneta(cor= 'azul')
+c4 = Caneta(cor= 'verde')
 c2.destampar()
+c3.destampar()
+c3.destampar()
+
 c2.escrever("Atenção: Erro crítico no sistema!")
+c3.escrever('ola mundinho')
+c3.quebrar_linha(2)
+c4.escrever('hellow')
+c4.quebrar_linha(5)
+
+c2.tampar()
+c2.escrever('Sera que rola?')

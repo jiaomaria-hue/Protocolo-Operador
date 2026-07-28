@@ -9,27 +9,12 @@ class Produto:
     self.preco = preco
 
   def etiqueta(self):
-    largura_box = 35
-
-    nome_formatado = f"{self.nome:^{largura_box}}"
-
-    linha_pontos = "-" * largura_box
-
-    preco_str = f"R${self.preco:,.2f}" 
-
-    preco_formatado = f"{preco_str:^{largura_box}}".replace(" ", ".")
-
-    conteudo = f"{nome_formatado}\n{linha_pontos}\n{preco_formatado}"
-
-    painel = Panel(
-    
-    conteudo, 
-    title="Produto", 
-    title_align="center", 
-    expand=False, 
-    border_style="blue"
-    )
-    print(painel)
+    conteudo = f'{self.nome.center(30, ' ')}'
+    conteudo += f'{'-' * 30}'
+    precof = f'R${self.preco:,.2f}'
+    conteudo += f'{precof.center(30, '-')}'
+    etiqueta = Panel(conteudo, title='Produto', width=34)
+    print(etiqueta)
 
 
 # Exemplo de uso:

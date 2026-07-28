@@ -20,7 +20,7 @@ class Churrasco:
         texto = Text.from_markup(
             f"Analisando [green]{self.titulo}[/green] com [blue]{self.quant} convidados[/blue]\n"
             f"Cada participante comerá {consumo_por_pessoa}Kg e cada Kg custa R${preco_kg:.2f}\n"
-            f"Recomendo [blue]comprar {total_quilos:.3f}Kg[/blue] de carne\n"
+            f"Recomendo [blue]comprar {total_quilos:.3f}Gramas[/blue] de carne\n"
             f"O custo total será de [green]R${custo_total:.2f}[/green]\n"
             f"Cada pessoa pagará [green]R${valor_por_pessoa:.2f}[/green] para participar."
         )
@@ -32,8 +32,6 @@ class Churrasco:
         )
         return painel
 
-
-# Instanciando e executando
-c = Churrasco("Churrasco em familia", 17)
+c = Churrasco("Clevinho", 5)
 resultado = c.analisar()
 print(resultado)

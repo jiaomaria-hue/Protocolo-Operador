@@ -2,102 +2,81 @@ from rich import print
 from rich.panel import Panel
 
 class ControleRemoto:
-    def __init__(self):
-        # Atributos protegidos para encapsulamento (conforme dica 2)
-        self._ligada = False
-        self._canal = 1
-        self._volume = 10
-        self._MIN_VOLUME = 0
-        self._MAX_VOLUME = 20
-        self._TOTAL_CANAIS = 5
+    canal_min:int = 1
+    canal_max:int = 5
+    voluem_min:int = 1
+    volume_max:int = 5
+    def __init__(self, volume=1, canal=1):
+        self.canal_atual:int = canal
+        self.volume_atual:int = volume
+        self.ligar:bool = False
 
-    def ligar_desligar(self):
-        self._ligada = not self._ligada
-        status = "ligada" if self._ligada else "desligada"
-        print(f"[yellow]A TV agora está {status}.[/yellow]")
+    def liga_desliga(self):
+        self.ligar = not self.ligar
 
-    def mais_canal(self):
-        # Validação de estado (dica 1)
-        if not self._ligada:
-            print("[red]Erro: A TV está desligada! Impossível alterar o canal.[/red]")
-            return
-        
-        # Lógica cíclica usando operador de resto (dica 3)
-        # Exemplo: se canal for 5, (5 % 5) + 1 = 1
-        self._canal = (self._canal % self._TOTAL_CANAIS) + 1
-        print(f"[cyan]Canal alterado para: {self._canal}[/cyan]")
+    def canal_mais(self):
+        if self.ligar:
+            if self.canal_atual == ControleRemoto.canal_max:
+                self.canal_atual = ControleRemoto.canal_min
+            else:
+                self.canal_atual += 1
 
-    def menos_canal(self):
-        if not self._ligada:
-            print("[red]Erro: A TV está desligada! Impossível alterar o canal.[/red]")
-            return
-        
-        # Lógica cíclica reversa
-        self._canal -= 1
-        if self._canal < 1:
-            self._canal = self._TOTAL_CANAIS
-        print(f"[cyan]Canal alterado para: {self._canal}[/cyan]")
+    def canal_menos(self):
+        if self.ligar:
+            if self.canal_atual == ControleRemoto.canal_min:
+                self.canal_atual = ControleRemoto.canal_max
+            else:
+                self.canal_atual -= 1
 
-    def mais_volume(self):
-        if not self._ligada:
-            print("[red]Erro: A TV está desligada! Impossível alterar o volume.[/red]")
-            return
-        
-        if self._volume < self._MAX_VOLUME:
-            self._volume += 1
-            print(f"[green]Volume: {self._volume}[/green]")
+
+    def volume_mais(self):
+        if self.ligar:
+            if self.volume_atual != ControleRemoto.volume_max:
+                self.volume_atual += 1
+
+    def volume_menos(self):
+        if self.ligar:
+            if self.volume_atual != ControleRemoto.voluem_min:
+                self.volume_atual -= 1
+
+
+    def mostrar_tv(self):
+        conteudo = ''
+        if not self.ligar:
+            conteudo = f':prohibited: [red]a TV esta desligada[/]'
         else:
-            print("[yellow]Aviso: Volume já está no máximo![/yellow]")
+            conteudo = f'CANAL  = '
+            for canal in range(ControleRemoto.canal_min, ControleRemoto.canal_max + 1):
+                if canal == self.canal_atual:
+                    conteudo += f'[yellow on yellow] {canal} [/]'
+                else:
+                    conteudo += f' {canal} '
 
-    def menos_volume(self):
-        if not self._ligada:
-            print("[red]Erro: A TV está desligada! Impossível alterar o volume.[/red]")
-            return
-        
-        if self._volume > self._MIN_VOLUME:
-            self._volume -= 1
-            print(f"[green]Volume: {self._volume}[/green]")
-        else:
-            print("[yellow]Aviso: A TV já está no mudo (mínimo)![/yellow]")
 
-    def exibir_status(self):
-        estado_txt = "[bold green]LIGADA[/bold green]" if self._ligada else "[bold red]DESLIGADA[/bold red]"
-        info = (
-            f"Estado: {estado_txt}\n"
-            f"Canal atual: {self._canal if self._ligada else '---'}\n"
-            f"Volume atual: {self._volume if self._ligada else '---'}"
-        )
-        print(Panel(info, title="[bold yellow]Painel da TV[/bold yellow]", border_style="blue", expand=False))
+            conteudo += f'\nVolume = '
+            for volume in range(ControleRemoto.voluem_min, ControleRemoto.volume_max+1):
+                if volume <= self.volume_atual:
+                    conteudo += f'[black on cyan] [/]'
+                else:
+                    conteudo += f'[black on white] [/]'
+        tv = Panel(conteudo, title='[ TV ]', width=40)
+        print(tv)
 
-# --- Loop principal de interação do programa ---
-controle = ControleRemoto()
-
+c = ControleRemoto()
 while True:
-    print("\n--- MENU DO CONTROLE ---")
-    print("[ @ ] Ligar / Desligar")
-    print("[ > ] Avançar Canal")
-    print("[ < ] Voltar Canal")
-    print("[ + ] Aumentar Volume")
-    print("[ - ] Diminuir Volume")
-    print("[ s ] Ver Status da TV")
-    print("[ 0 ] Sair")
-    
-    opcao = input("Digite o comando: ").strip()
-
-    if opcao == "0":
-        print("[red]Encerrando o sistema do controle... Até logo![/red]")
-        break
-    elif opcao == "@":
-        controle.ligar_desligar()
-    elif opcao == ">":
-        controle.mais_canal()
-    elif opcao == "<":
-        controle.menos_canal()
-    elif opcao == "+":
-        controle.mais_volume()
-    elif opcao == "-":
-        controle.menos_volume()
-    elif opcao.lower() == "s":
-        controle.exibir_status()
-    else:
-        print("[red]Comando inválido! Tente novamente.[/red]")
+    c.mostrar_tv()
+    comando = str(input(f'\n< CH{c.canal_atual} >     - VOL{c.volume_atual} + '))
+    match comando:
+        case '0':
+            break
+        case '@':
+            c.liga_desliga()
+        case '>':
+            c.canal_mais()
+        case '<':
+            c.canal_menos()
+        case '-':
+            c.volume_menos()
+        case '+':
+            c.volume_mais()
+    print('\n' * 10)
