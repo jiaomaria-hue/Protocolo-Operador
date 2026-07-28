@@ -14,7 +14,7 @@ class Aluno(Pessoa):
         self.turma = turma
 
     def fazer_matricula(self):
-        print(f'O aluno {self.nome}, acabou de fazer matricula')
+        print(f'[green]O aluno [red]{self.nome}[/], acabou de fazer matricula[/]')
 
 
 class Professor(Pessoa):
@@ -24,7 +24,7 @@ class Professor(Pessoa):
         self.nivel = nivel
 
     def dar_aula(self):
-        print(f'O professor {self.nome}, começou a dar aula')
+        print(f'[yellow]O professor [red]{self.nome}[/], começou a dar aula[/]')
 
 
 class Funcionario(Pessoa):
@@ -34,15 +34,4 @@ class Funcionario(Pessoa):
         self.setor = setor
 
     def bater_ponto(self):
-        print(f'o funcionario(a) {self.nome}, acabou de bater ponto')
-
-a1 = Aluno('jose', 17,'informatica', 'T01')
-a1.fazer_aniversario()
-a1.fazer_matricula()
-
-p1 = Professor('Samuel', 37, 'biologia', 'Mestrado')
-p1.dar_aula()
-
-f1 = Funcionario('Joao', 24, 'Cybersecurity senior', 'TI')
-f1.bater_ponto()
-f1.fazer_aniversario()
+        print(f'[blue]o funcionario(a) [red]{self.nome}[/], acabou de bater ponto[/]')
