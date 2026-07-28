@@ -239,3 +239,25 @@ Nunca copiar codigo da internet
 
 **Tempo perdido:** 20 minutos
 **Nunca mais:** X — Desafios .
+
+
+## [005] — 27/07/2026 — Desafios mundo 4
+
+**Sprint:** 2 · **Área:** Python, Desafios Mundo 4
+
+**Contexto:**
+Aula sobre classes,e o matche e o case, conclusao de desafios e resolvendo desafios
+
+**O que aprendi:**
+como fazer classes e como usar o matche e o case
+
+**O que ainda não entendo:**
+ainda nao entendi muito sobre fazer codigos grandes usando classe mas ja entendi
+**Resultado:**
+os Desafios deram certos.
+
+**Lição permanente:**
+Nunca copiar codigo da internet
+
+**Tempo perdido:** 20 minutos
+**Nunca mais:** X — Desafios .
