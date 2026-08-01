@@ -1,4 +1,4 @@
-from classesex005 import Aluno, Professor, Funcionario
+from pessoa import Professor, Funcionario, Aluno
 from rich import inspect, print
 a1 = Aluno('jose', 17,'informatica', 'T01')
 a1.fazer_aniversario()
