@@ -261,3 +261,24 @@ Nunca copiar codigo da internet
 
 **Tempo perdido:** 20 minutos
 **Nunca mais:** X — Desafios .
+
+## [005] — 02/08/2026 — Terminal de Missão + Revisão do operador.py
+
+**Sprint:** 2 · **Área:** Python / POO / os / subprocess / socket
+
+**O que construí:**
+Terminal de Missão com 3 fases — autenticação, reconhecimento e varredura.
+Usei POO, os, subprocess, socket e rich num projeto só.
+
+**Feedback recebido:**
+- Banner deve ficar fora do while True
+- Scanner deve virar classe PortScanner separada
+- Timeout fixo deve virar constante TIMEOUT = 0.5
+- Projeto deve evoluir para arquitetura modular com pastas core/, utils/, services/
+
+**Lição permanente:**
+Código que funciona não é o mesmo que código organizado.
+Arquitetura importa tanto quanto lógica.
+
+**Próximo passo:**
+Refatorar operador.py com banner fora do loop e PortScanner como classe.
