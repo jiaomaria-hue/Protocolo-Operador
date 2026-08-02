@@ -1,5 +1,4 @@
 <h1 align="center">João — Purple Team em construção</h1>
-
 <p align="center">
 Estudante autodidata executando um plano estruturado de 85 semanas rumo a Security Engineering.<br>
 Palmas, Tocantins — Brasil.
@@ -10,15 +9,20 @@ Palmas, Tocantins — Brasil.
 ### 🎯 Foco atual
 
 Executando o **Protocolo-Operador**: 85 semanas divididas em Fundação + Red Team → Blue Team → Purple Team.
+
 Sem curso pronto, sem atalho — cada linha de código commitada é linha escrita e entendida, não copiada.
 
-📍 **Onde estou agora:** Bloco 1, Sprint 2 — Python aplicado + Git, construindo as primeiras ferramentas ofensivas/defensivas do zero.
+📍 **Onde estou agora:** Bloco 1, Sprint 2 — Python aplicado, módulos `os`, `subprocess`, `socket`, POO com classes e herança.
 
 ---
 
 ### 📦 Projetos em destaque
 
-- **[Protocolo-Operador](https://github.com/jiaomaria-hue/Protocolo-Operador)** — diário técnico completo do roadmap de 85 semanas, com ferramentas próprias (port scanner, simulador de firewall, RECON) e log de erro documentado
+- **[operador.py](https://github.com/jiaomaria-hue/Protocolo-Operador)** — ferramenta unificada com menu interativo: RECON, Firewall Logic, Port Scanner e consulta OSINT de IP
+- **[recon.py](https://github.com/jiaomaria-hue/Protocolo-Operador)** — classe Python para resolução de domínios via socket
+- **[firewall.py](https://github.com/jiaomaria-hue/Protocolo-Operador)** — simulador de regras de firewall com POO
+- **[ip_osint.py](https://github.com/jiaomaria-hue/Protocolo-Operador)** — consulta de geolocalização e ISP de IPs via API pública
+- **[port_scanner.py](https://github.com/jiaomaria-hue/Protocolo-Operador)** — scanner TCP de portas 1-1024 com timeout e contagem de portas abertas
 
 ---
 
