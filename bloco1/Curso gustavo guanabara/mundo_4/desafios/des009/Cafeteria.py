@@ -38,7 +38,7 @@ class Cha(Bebidaquente):
 
 class Leite(Bebidaquente):
     def misturar(self):
-        print('2. Passando agua pressurizada pela chaleira do leite')
+        print('2. Passando vapor pressurizada pela chaleira do leite')
 
     def servir(self):
         print('3. Servindo na caneca grande, ja com cafe.')

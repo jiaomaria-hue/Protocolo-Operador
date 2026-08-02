@@ -1,55 +1,56 @@
 from recon import Recon
 from firewall import Firewall
+from ip_osint import Ip
 import socket
 from time import sleep
+from rich import print
 
 while True:
     sleep(2)
-    print(f"""
-    \033[36m████████╗███████╗███████╗████████╗███████╗\033[0m
-    \033[36m╚══██╔══╝██╔════╝██╔════╝╚══██╔══╝██╔════╝\033[0m
-    \033[36m   ██║   █████╗  ███████╗   ██║   █████╗  \033[0m
-    \033[36m   ██║   ██╔══╝  ╚════██║   ██║   ██╔══╝  \033[0m
-    \033[36m   ██║   ███████╗███████║   ██║   ███████╗\033[0m
-    \033[36m   ╚═╝   ╚══════╝╚══════╝   ╚═╝   ╚══════╝\033[0m
-                        \033[1mProtocolo Teste — Sprint 1\033[0m
-    """)
+    print("""
+[red]  _________             _________        .__          __  .__                [/]
+[red] /   _____/   /\\|\/\\    \\_   ___ \\  ____ |  |   _____/  |_|__|__  _______  [/]
+[red] \\_____  \\   _)    (__  /    \\  \\/ /  _ \\|  | _/ __ \\   __\\  \\  \\/ /\\__  \\ [/]
+[red] /        \\  \\_     _/  \\     \\___(  <_> )  |_\\  ___/|  | |  |\\   /  / __ \\[/]
+[red]/_______  /    )    \\    \\______  /\\____/|____/\\___  >__| |__| \\_/  (____  /[/]
+[red]        \\/     \\/\\|\\/           \\/                 \\/                    \\/ [/]
+                [bold]Protocolo Operador — Sprint 2[/]
+""")
 
-    print('\033[36m' + '=' * 50 + '\033[0m')
-    print('   \033[33m1\033[0m - Reconhecimento (RECON)')
-    print('   \033[33m2\033[0m - Firewall Logic')
-    print('   \033[33m3\033[0m - Port Scanner')
-    print('   \033[33m4\033[0m - Sair')
-    print('\033[36m' + '=' * 50 + '\033[0m')
+    print("[cyan]" + "=" * 50 + "[/]")
+    print("   [yellow]1[/] - Reconhecimento (RECON)")
+    print("   [yellow]2[/] - Firewall Logic")
+    print("   [yellow]3[/] - Port Scanner")
+    print("   [yellow]4[/] - Consulta de IP (OSINT)")
+    print("   [yellow]5[/] - Sair")
+    print("[cyan]" + "=" * 50 + "[/]")
 
-    opcao = input(f'\n\033[1mEscolha uma opção: \033[0m').strip()
+    opcao = input("\nEscolha uma opção: ").strip()
 
     if opcao == '1':
-        alvo = input('\033[36mDigite o domínio ou IP do alvo: \033[0m').strip()
+        alvo = input("[cyan]Digite o domínio ou IP do alvo: [/]").strip()
         if alvo:
             r = Recon(alvo)
             r.resolver_ip()
         else:
-            print('\033[31m❌ Alvo não pode ser vazio.\033[0m')
+            print("[red]❌ Alvo não pode ser vazio.[/]")
 
     elif opcao == '2':
         try:
-            porta = int(input('\033[36mDigite a porta: \033[0m'))
-            protocolo = input('\033[36mDigite o protocolo (TCP/UDP): \033[0m').strip().upper()
+            porta = int(input("Digite a porta: "))
+            protocolo = input("Digite o protocolo (TCP/UDP): ").strip().upper()
             f = Firewall(porta, protocolo)
             f.analisar()
         except ValueError:
-            print('\033[31m❌ Erro: Digite um número válido para a porta.\033[0m')
+            print("[red]❌ Erro: Digite um número válido para a porta.[/]")
 
     elif opcao == '3':
-        alvo = input('\033[36mDigite o alvo: \033[0m').strip()
+        alvo = input("Digite o alvo: ").strip()
         if not alvo:
-            print('\033[31m❌ Erro: Por favor insira um Alvo válido.\033[0m')
+            print("[red]❌ Erro: Por favor insira um Alvo válido.[/]")
             continue
-
-        print(f'\n\033[33m🔍 Escaneando {alvo}...\033[0m')
-        print('-' * 40)
-        
+        print(f"\n[yellow]🔍 Escaneando {alvo}...[/]")
+        print("-" * 40)
         abertas = 0
         try:
             for porta in range(1, 1025):
@@ -57,21 +58,25 @@ while True:
                     s.settimeout(0.5)
                     resultado = s.connect_ex((alvo, porta))
                     if resultado == 0:
-                        print(f'\033[32m✅ Porta {porta} aberta\033[0m')
+                        print(f"[green]✅ Porta {porta} aberta[/]")
                         abertas += 1
         except socket.gaierror:
-            print('\033[31m❌ Erro: Não foi possível resolver o hostname/IP informado.\033[0m')
+            print("[red]❌ Erro: Não foi possível resolver o hostname/IP.[/]")
         except KeyboardInterrupt:
-            print('\n\033[33m⚠️ Scan interrompido pelo usuário.\033[0m')
+            print("\n[yellow]⚠️ Scan interrompido pelo usuário.[/]")
         except Exception as e:
-            print(f'\033[31m❌ Erro inesperado no escaneamento: {e}\033[0m')
-        
-        print('-' * 40)
-        print(f'\033[1mScan completo. {abertas} porta(s) aberta(s) encontrada(s).\033[0m')
+            print(f"[red]❌ Erro inesperado: {e}[/]")
+        print("-" * 40)
+        print(f"[bold]Scan completo. {abertas} porta(s) aberta(s).[/]")
 
     elif opcao == '4':
-        print('\033[33mSaindo do Protocolo Teste...\033[0m')
+        ip = input("Digite o IP: ").strip()
+        i = Ip(ip)
+        i.osint_basico_ip()
+
+    elif opcao == '5':
+        print("[bold]Saindo do protocolo[/]")
         break
 
     else:
-        print('\033[31m❌ Opção inválida.\033[0m')
+        print("[red]❌ Opção inválida.[/]")
