@@ -4,6 +4,7 @@ from ip_osint import Ip
 from time import sleep
 from rich import print
 from scanner import PortScanner
+from config import *
 print("""
 [red]  _________             _________        .__          __  .__                [/]
 [red] /   _____/   /\\|\/\\    \\_   ___ \\  ____ |  |   _____/  |_|__|__  _______  [/]

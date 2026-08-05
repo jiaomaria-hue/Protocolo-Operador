@@ -1,7 +1,6 @@
 import socket
 from rich import print
-
-TIMEOUT = 0.5
+from config import TIMEOUT, PORTA_FIM, PORTA_INICIO
 
 class PortScanner:
     def __init__(self, alvo):
@@ -13,7 +12,7 @@ class PortScanner:
         print("-" * 40)
 
         try:
-            for porta in range(1, 1025):
+            for porta in range(PORTA_INICIO, PORTA_FIM):
                 with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
                     s.settimeout(TIMEOUT)
 
