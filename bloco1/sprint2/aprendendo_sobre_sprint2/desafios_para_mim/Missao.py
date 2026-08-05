@@ -1,6 +1,5 @@
-from rich import print, inspect
+from rich import print
 import subprocess
-import os
 import socket
 from datetime import datetime
 
