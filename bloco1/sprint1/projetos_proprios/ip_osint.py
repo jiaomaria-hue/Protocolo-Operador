@@ -5,7 +5,7 @@ class Ip:
         self.ip = ip
     def osint_basico_ip(self):
         resultado = subprocess.run(
-            ['curl', '-s', f'{URL_IPINFO}'],
+            ['curl', '-s', URL_IPINFO.format(ip=self.ip)],
             capture_output=True,
             text=True
         )
