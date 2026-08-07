@@ -21,7 +21,8 @@ while True:
     print("   [yellow]2[/] - Firewall Logic")
     print("   [yellow]3[/] - Port Scanner")
     print("   [yellow]4[/] - Consulta de IP (OSINT)")
-    print("   [yellow]5[/] - Sair")
+    print("   [yellow]5[/] - Scan UDP")
+    print("   [yellow]6[/] - Sair")
     print("[cyan]" + "=" * 50 + "[/]")
 
     opcao = input("\nEscolha uma opção: ").strip()
@@ -59,8 +60,13 @@ while True:
         i.osint_basico_ip()
 
     elif opcao == '5':
-        print("[bold]Saindo do protocolo[/]")
-        break
+        alvo = input('Digite um alvo: ').strip()
+        if not alvo:
+            print('[red]❌ Alvo inválido.[/]')
+            continue
+        scanner = PortScanner(alvo)
+        scanner.scan_udp()
+
 
     else:
         print("[red]❌ Opção inválida.[/]")
