@@ -1,2 +1,5 @@
 cidade = str(input('digite o nome de uma cidade: ')).lower().strip()
-print(cidade[:5] == 'santo')
+if 'santo' in cidade: 
+    print('Sua cidade tem santo no nome')
+else:
+    print('Sua cidade nao tem santo no nome')

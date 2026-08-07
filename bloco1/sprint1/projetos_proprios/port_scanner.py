@@ -1,4 +1,5 @@
 import socket
+from concurrent.futures import ThreadPoolExecutor
 
 alvo = input('\n\033[1mDigite o alvo: \033[0m')
 

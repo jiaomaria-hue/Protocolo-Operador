@@ -282,3 +282,28 @@ Arquitetura importa tanto quanto lógica.
 
 **Próximo passo:**
 Refatorar operador.py com banner fora do loop e PortScanner como classe.
+
+## [006] — 06/08/2026 — Refatoração completa do operador.py
+
+**Sprint:** 2 · **Área:** Python / POO / Arquitetura
+
+**O que fiz:**
+- Banner movido para fora do while True
+- PortScanner virou classe separada em scanner.py
+- config.py criado com TIMEOUT, PORTA_INICIO, PORTA_FIM, URL_IPINFO
+- Todos os módulos atualizados para usar rich sem ANSI misturado
+- ip_osint.py formatado com Panel do rich
+- firewall.py limpo e padronizado
+- recon.py com except socket.gaierror específico
+
+**Feedback do amigo:**
+Nota 8,8/10. Pontos fortes: modularização, tratamento de exceções, organização.
+Próximo nível: arquitetura de pastas, ThreadPoolExecutor no scanner.
+
+**Lição permanente:**
+Código que funciona não é o mesmo que código organizado.
+Constantes em config.py — muda em um lugar, reflete em todo o projeto.
+
+**Tempo investido:** tarde inteira
+**Nunca mais:** ANSI misturado com rich no mesmo arquivo
+
