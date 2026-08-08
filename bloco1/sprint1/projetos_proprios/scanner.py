@@ -4,6 +4,7 @@ from rich import print
 from config import TIMEOUT, PORTA_FIM, PORTA_INICIO
 from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime
+from logger import salvar_log
 
 
 class PortScanner:
@@ -36,7 +37,7 @@ class PortScanner:
         print("-" * 40)
         with ThreadPoolExecutor(max_workers=100) as executor:
             executor.map(self.testar_porta, range(PORTA_INICIO, PORTA_FIM))
-        self.salvar_relatorio()
+        salvar_log(self.alvo, self.portas_abertas)
         return self.portas_abertas
 
     def scan_udp(self):
@@ -60,3 +61,4 @@ class PortScanner:
                 print(f"[yellow]⚠️ Porta UDP {porta} ({servico}) sem resposta[/]")
             except Exception as e:
                 print(f"[red]❌ Porta UDP {porta} ({servico}) — {e}[/]")
+        self.salvar_relatorio()

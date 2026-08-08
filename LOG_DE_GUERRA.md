@@ -307,3 +307,29 @@ Constantes em config.py — muda em um lugar, reflete em todo o projeto.
 **Tempo investido:** tarde inteira
 **Nunca mais:** ANSI misturado com rich no mesmo arquivo
 
+## [007] — 08/08/2026 — Revisão Sprint 2
+
+**Sprint:** 2 · **Área:** Python / os / subprocess / socket / threading / Git
+
+**O que aprendi essa semana:**
+- `os` — listdir, makedirs, path.join, path.isfile, path.getsize
+- `subprocess` — run, returncode, stdout, stderr, cwd
+- `socket` — threading com ThreadPoolExecutor, scan em 5s
+- Git branches — criar, desenvolver, merge, deletar
+- `concurrent.futures.ThreadPoolExecutor` — 100 workers em paralelo
+
+**Correções de conceito:**
+- `os.path.join()` não entra em pasta — monta caminho completo
+- `os.makedirs()` cria pastas aninhadas, `mkdir` só uma por vez
+- `returncode` — 0 é sucesso, outro número é erro
+
+**Projeto da semana:**
+- scanner.py com threading — de 8 minutos para 5 segundos
+- scan UDP adicionado — DNS, DHCP, NTP, SNMP
+- relatório automático em .txt após scan
+- config.py centraliza todas as constantes
+- Git branch workflow praticado na feature/relatorio-txt
+
+**Lição permanente:**
+Threading não é sobre velocidade de cada conexão — é sobre fazer várias ao mesmo tempo.
+Branch é uma cópia segura para desenvolver sem quebrar a main.
