@@ -3,3 +3,8 @@ Data: 07/08/2026 21:24
 Alvo: google.com
 Tipo: TCP
 Portas abertas: [80, 443]
+========================================
+Data: 08/08/2026 18:35
+Alvo: google.com
+Tipo: TCP
+Portas abertas: [80, 443]
