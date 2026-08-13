@@ -1,0 +1,12 @@
+Aprendendo redes.
+
+Quem é o dono da internet? 
+- A internet nao tem dono, sao varias empresas interconectadas dando informaçoes o tempo todo para o companheiro, Todo jogo multiplayer que voce joga, midias sociais e etc nao pertencem a um unico homem pertence a um conjunto mundial de redes interconectadas.
+Redes locais:
+- Existem redes de diversos tamanhos como:
+* A de um escritorio sao como uns computadores ligado a uma internet empresarial. Que e chamado de SOHO(Pequeno Escritório Doméstico)
+* A de casa tambem e chamada de SOHO, Mas e conectada apenas a um computador e uma unica internet,
+* Ja redes médias a grandes sao redes de medios a grande porte,COmo usada em empresas e escolas, Pode ter locais com centenas e milhares de conectados na host
+* Ja a Rede mundial Conecta ao mundo inteiro a milhoes de pessoas
+**DIspositivos moveis:**
+
