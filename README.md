@@ -12,9 +12,7 @@ Executando o **Protocolo-Operador**: 85 semanas divididas em Fundação + Red Te
 
 Sem curso pronto, sem atalho — cada linha de código commitada é linha escrita e entendida, não copiada.
 
-📍 **Onde estou agora:** Bloco 1, Sprint 2 — Python aplicado, módulos `os`, `subprocess`, `socket`, POO com classes e herança.
-
----
+## 📍 Onde estou agora: **Bloco 1, Sprint 3 — Redes, Cisco Networking Academy**
 
 ### 📦 Projetos em destaque
 
