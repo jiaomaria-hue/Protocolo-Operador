@@ -6,7 +6,7 @@ try:
     resposta = requests.get(f'https://ipinfo.io/{ip}/json')
     dados = resposta.json()
     if dados.get('ip') is None:
-        print('[red]❌ IP inválido ou não encontrado.[/]')
+        print('[red] IP inválido ou não encontrado.[/]')
     else:
         conteudo = (
     f"[cyan]IP:[/] {dados.get('ip')}\n"
