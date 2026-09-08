@@ -6,7 +6,7 @@ for porta in portas:
     s.settimeout(1.5)
     resultado = s.connect_ex((alvo, porta))
     if resultado == 0:
-        print(f'Porta {porta} foi conectada')
+        print(f'Porta {porta}  conectada')
     else:
-        print(f'Porta {porta} nao foi conectada')
+        print(f'Porta {porta} nao conectada')
     s.close() 

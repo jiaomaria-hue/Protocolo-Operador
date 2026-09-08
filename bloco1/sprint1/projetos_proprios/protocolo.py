@@ -67,6 +67,9 @@ while True:
         scanner = PortScanner(alvo)
         scanner.scan_udp()
 
+    elif opcao == '6':
+        print("[red]Saindo....[/]")
+        break
 
     else:
         print("[red]❌ Opção inválida.[/]")
