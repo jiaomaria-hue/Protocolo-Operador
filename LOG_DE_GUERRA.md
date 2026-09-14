@@ -123,7 +123,7 @@ fazendo o curso do gustavo guanabara, e entrando em outro episodio.
 **Solução:**
 cidade = str(input('digite o nome de uma cidade: ')).lower().strip()
 print(cidade[:5] == 'santo')
-```
+
 E adicionei na primeira linha do script:
 variavel, input str e .lower() .strip()
 o .lower() = serve pra deixar tudo minusculo. ja o strip tira todos os espaços indejesados.
@@ -333,3 +333,19 @@ Constantes em config.py — muda em um lugar, reflete em todo o projeto.
 **Lição permanente:**
 Threading não é sobre velocidade de cada conexão — é sobre fazer várias ao mesmo tempo.
 Branch é uma cópia segura para desenvolver sem quebrar a main.
+
+## [008] — 09/09/2026 — Cliente SSH em Python (Paramiko) & Automação Bash
+
+**Sprint:** 3 · **Área:** Python / Paramiko / Security Automation
+
+**O que foi construído:**
+- Cliente SSH com interface de linha de comando usando `paramiko.SSHClient()`.
+- Captura segura de credenciais via `getpass.getpass()`.
+- Tratamento de reconexões e interrupção limpa com bloco `try/except/finally`.
+
+**Análise Purple Team:**
+- **Red Team:** O uso de `paramiko.exec_command()` cria sessões não-interativas. Comandos que dependem de contexto (como `cd`) não persistem o estado entre chamadas.
+- **Blue Team:** A linha `AutoAddPolicy()` ignora a checagem da chave pública do servidor (`known_hosts`), tornando o cliente vulnerável a ataques de Man-In-The-Middle (MITM) na rede local.
+
+**Lição permanente:**
+Sempre encapsular a finalização de sockets dentro do bloco `finally`. Chamadas de autenticação em scripts nunca devem conter credenciais em hardcode.
