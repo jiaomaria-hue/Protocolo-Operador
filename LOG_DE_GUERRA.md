@@ -349,3 +349,19 @@ Branch é uma cópia segura para desenvolver sem quebrar a main.
 
 **Lição permanente:**
 Sempre encapsular a finalização de sockets dentro do bloco `finally`. Chamadas de autenticação em scripts nunca devem conter credenciais em hardcode.
+
+## [009] — 16/09/2026 — OWASP Top 10 & PortSwigger Labs (SQLi, XSS, IDOR)
+**Sprint:** 4 · **Área:** Web Security / Injection / Access Control
+**O que aprendeu essa semana:**
+- OWASP Top 10 2025 — as 10 vulns críticas web
+- SQL Injection — UNION SELECT, column detection, data extraction
+- XSS Refletido — JavaScript injetado executado no navegador
+- IDOR — escalação horizontal de privilégio via parâmetros
+**Labs completados:**
+- PortSwigger SQLi Lab 1 (UNION SELECT @@version)
+- PortSwigger XSS Lab 1 (alert via onerror)
+- PortSwigger IDOR Lab 1 (acesso a dados de outro usuário)
+**Lição permanente:**
+Injection é input não validado → comando/código executado.
+IDOR é falta de verificação de permissão → acesso horizontal.
+XSS é JavaScript executado no contexto errado → robo de dados.

