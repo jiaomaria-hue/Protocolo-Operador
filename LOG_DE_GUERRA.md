@@ -390,3 +390,8 @@ Resultado de ferramenta OSINT sempre precisa de validação manual (ex: wildcard
 Relatório profissional exige linguagem de negócio no Sumário Executivo, não só detalhe técnico.
 
 **Nunca mais:** Esquecer de logar no mesmo dia — quase perdeu o registro de 2 sprints inteiros.
+
+**obs: Decisão de OpSec — Presença Pública Adiada**
+**Decidi adiar a criação de LinkedIn/presença pública por questões de exposição pessoal.**
+**Os posts técnicos mensais exigidos a partir do Bloco 2 serão documentados normalmente**
+**nos write-ups e publicados retroativamente quando eu decidir abrir a conta.**

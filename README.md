@@ -12,7 +12,7 @@ Executando o **Protocolo-Operador**: 85 semanas divididas em Fundação + Red Te
 
 Sem curso pronto, sem atalho — cada linha de código commitada é linha escrita e entendida, não copiada.
 
-## 📍 Onde estou agora: **Bloco 1, Sprint 3 — Redes, Cisco Networking Academy**
+## 📍 Onde estou agora: **Bloco 1, Sprint 6 — Primeiro Pentest Real (HackTheBox + Relatório Profissional)**
 
 ### 📦 Projetos em destaque
 
@@ -21,6 +21,13 @@ Sem curso pronto, sem atalho — cada linha de código commitada é linha escrit
 - **[firewall.py](https://github.com/jiaomaria-hue/Protocolo-Operador)** — simulador de regras de firewall com POO
 - **[ip_osint.py](https://github.com/jiaomaria-hue/Protocolo-Operador)** — consulta de geolocalização e ISP de IPs via API pública
 - **[port_scanner.py](https://github.com/jiaomaria-hue/Protocolo-Operador)** — scanner TCP de portas 1-1024 com timeout e contagem de portas abertas
+- **[subnet_calc.py](https://github.com/jiaomaria-hue/Protocolo-Operador/bloco1/sprint1/projetos_proprios/calculadora_subnett.py)** — calculadora de sub-redes CIDR (endereço de rede, broadcast, hosts úteis)
+
+### 🏆 Máquinas comprometidas
+
+- **TryHackMe — Vulnversity** (Linux): Unrestricted File Upload bypass → SUID `systemctl` → root
+- **TryHackMe — Blue** (Windows): EternalBlue (MS17-010) → Meterpreter → hashdump → root
+- **HackTheBox — Cap** (Linux): IDOR em endpoint `/data/{id}` → credenciais FTP vazadas → Linux Capabilities `cap_setuid` → root
 
 ---
 
@@ -28,6 +35,7 @@ Sem curso pronto, sem atalho — cada linha de código commitada é linha escrit
 
 - Commit diário, segunda a sábado
 - `LOG_DE_GUERRA.md` — todo erro resolvido vira entrada documentada: problema, tentativas, solução
+- Relatórios de pentest seguindo padrão profissional (Sumário Executivo, CVSS, CWE, PoC, Remediação)
 - Zero cópia de código — cada exercício é digitado e compreendido, não colado
 - Roadmap público, versionado, sem edição fora da janela certa
 
