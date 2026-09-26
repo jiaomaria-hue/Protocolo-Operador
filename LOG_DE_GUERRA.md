@@ -365,3 +365,28 @@ Sempre encapsular a finalização de sockets dentro do bloco `finally`. Chamadas
 Injection é input não validado → comando/código executado.
 IDOR é falta de verificação de permissão → acesso horizontal.
 XSS é JavaScript executado no contexto errado → robo de dados.
+
+## [010] — 26/09/2026 — Sprint 5 (OSINT) + Sprint 6 (Primeiro Pentest Real)
+**Sprint:** 5-6 · **Área:** Reconhecimento Ofensivo / Pentest Profissional
+
+**Sprint 5 — OSINT:**
+- Google Hacking (site:, intext:, inurl:, intitle:, filetype:)
+- GHDB — dork prático (GHDB-ID 8424, diretório exposto real)
+- Bing reverse IP — mapeamento de domínios irmãos
+- theHarvester — 441 hosts coletados, identificado Wildcard DNS como ruído
+- Shodan — 318k hosts Apache no Brasil, achado real (USP com PHP EOL)
+- crt.sh — subdomínios reais via certificados SSL
+- 2 máquinas TryHackMe completas: Vulnversity (Linux, upload bypass + SUID systemctl) e Blue (Windows, EternalBlue MS17-010)
+- 2 write-ups técnicos completos com metodologia
+
+**Sprint 6 — Primeiro Pentest Real:**
+- Máquina HackTheBox "Cap" completada
+- Relatório de pentest profissional formal (Sumário Executivo, CVSS, CWE, PoC, Remediação)
+- 2 findings: IDOR (CVSS 7.5) + Linux Capabilities cap_setuid (CVSS 9.8)
+- Cadeia de exploração completa: acesso inicial → escalação de privilégio → root
+
+**Lição permanente:**
+Resultado de ferramenta OSINT sempre precisa de validação manual (ex: wildcard DNS gera falsos positivos).
+Relatório profissional exige linguagem de negócio no Sumário Executivo, não só detalhe técnico.
+
+**Nunca mais:** Esquecer de logar no mesmo dia — quase perdeu o registro de 2 sprints inteiros.
