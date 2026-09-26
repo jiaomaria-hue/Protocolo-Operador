@@ -57,3 +57,39 @@
 - Roubar cookies (sessão)
 - Roubar dados sensíveis
 - Redirecionar pra phishing
+
+## IDOR Lab 6 — Privilege Escalation via URL Parameter
+
+- **Payload:** `?id=wiener&admin=true`
+- **Resultado:** Acesso a painel admin
+- **Ação:** Deletei usuário carlos
+- **Por que funciona:** Sem validação se wiener é admin
+
+**Impacto:** Qualquer user pode virar admin e deletar outros
+
+---
+
+## IDOR Lab 7 — Admin Cookie Manipulation via DevTools
+
+- **Vulnerabilidade:** Cookie `Admin=false` pode ser mudado no navegador
+- **Método:** DevTools (F12) → Application → Cookies → muda `false` pra `true`
+- **Resultado:** Acesso ao `/admin`, deletei carlos
+- **Impacto:** Qualquer user vira admin sem permissão
+
+---
+
+## Resumo Sprint 4
+
+**6 Labs Explorados:**
+1. SQLi MySQL
+2. SQLi Oracle
+3. XSS Refletido
+4. XSS Stored
+5. IDOR URL Parameter
+6. IDOR Cookie Manipulation
+
+**Conceitos Aprendidos:**
+- Injection (SQL injection, diferenças MySQL/Oracle)
+- XSS (Reflected vs Stored)
+- IDOR (múltiplas formas de escalação)
+- Importância de validação e autenticação
