@@ -26,3 +26,9 @@
 - Risco: Docker contorna regras do UFW diretamente no iptables, exposicao real mesmo com firewall ativo
 - Acao: todos os containers parados e removidos (docker stop + docker rm)
 - Licao: UFW sozinho NAO protege contra servicos Docker expostos - preciso auditar containers regularmente, nao so configs de SSH
+
+## Checkpoint Final - Teste de Resistencia
+- Teste: tentativa de login SSH forcando autenticacao por senha
+- Comando: ssh -o PreferredAuthentications=password usuario@localhost
+- Resultado: Permission denied (publickey) - CONFIRMADO que PasswordAuthentication no bloqueia senha de verdade
+- Conclusao: Hardening validado na pratica, nao so configurado no papel
